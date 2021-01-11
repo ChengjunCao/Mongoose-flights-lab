@@ -1,0 +1,36 @@
+<%- include('./header') %>
+    <h1>Welcome to Flights Page</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Airline</th>
+                <th>Airport</th>
+                <th>FlightNo</th>
+                <th>Departs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% results.forEach(function(result) { %>
+                <tr>
+                    <td>
+                        <%= result.airline %>
+                    </td>
+                    <td>
+                        <%= result.airport %>
+                    </td>
+                    <td>
+                        <%= result.flightNo %>
+                    </td>
+                    <td>
+                        <%= result.departs %></td>
+                    </td>
+                    <td>
+                        <a href="/flights/<%= result._id %>">Details</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+</body>
+</html>
